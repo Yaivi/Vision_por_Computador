@@ -27,8 +27,8 @@ Generamos un 4x4 en los cuales, excetuando el primero, variamos sus colores para
 - Numpy
 
 ## Autores
-@Yaivi  
-@AlfreVR
+@Yaivi    (Javier Sánchez Godoy)
+@AlfreVR  (Alfredo Villarroya Roldós)
 
 
 
