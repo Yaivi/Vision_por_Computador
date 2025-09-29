@@ -10,5 +10,8 @@ Para esta parte lo que hemos hecho ha sido crear diferentes funciones que aplica
 
 - Modo pixelado (tecla A): este modo captura la imagen reduce su tamaño por tanto se baja la resolución y luego esa imagen de menor resolución se vuelve a ensanchar, pero usando una interpolación por el vecino más cercano lo que da como resultado el efecto de pixelado.
 - Modo color (tecla B): este modo cambia los colores de la imagen alterando los canales de la imagen para que al rearmar la imagen esta tengo los colores combinados de forma diferente.
+- Modo bordes coloreados (tecla K): con este efecto se cogen los bordes y se colorean.
+- Modo detector de movimiento (tecla ): se capturan 2 frames y se comparan para ver lo que se mueve, si se detecta movimiento se señala con un color.
+
 
 ### Apartado 4
