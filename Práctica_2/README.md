@@ -19,7 +19,7 @@ Para esta parte lo que hemos hecho ha sido crear diferentes funciones que aplica
 
 
 ### Apartado 4
-Hemos decidido hacer una reinterpretación de la obra de My Little Piece of Privacy de Niklas Roy. En este caso tapamos el contorno de las personas con una "cortina" tapandolo.
+Hemos decidido hacer una reinterpretación de la obra de My Little Piece of Privacy de Niklas Roy. En este caso tapamos el contorno de las personas con una "cortina". Esto se hizo separando el fondo, aplicando una capa por encima al contorno descubierto, sobre eta silueta se superpone una rejilla translucida para dar apariencia como la cortina original.
 
 
 ### Controles
