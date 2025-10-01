@@ -1,7 +1,8 @@
 # Práctica 2
 ## Contenido
 ### Apartado 1
-
+Para realizar la cuenta de pixeles por filas, proponemos dos maneras de realizarlo, la primera es rotando la imagen y contar columnas. La otra manera es contandolo por filas.
+Imprimimos el valor máximo y una lista con los valores de las filas y sus posiciones que sean mayor o igual que el 90% del valor máximo de la fila.
 ### Apartado 2
 
 
@@ -15,3 +16,16 @@ Para esta parte lo que hemos hecho ha sido crear diferentes funciones que aplica
 
 
 ### Apartado 4
+Hemos decidido hacer una reinterpretación de la obra de My Little Piece of Privacy de Niklas Roy. En este caso tapamos el contorno de las personas con una "cortina" tapandolo.
+
+
+### Controles
+Los controles son usados para el apartado 3:
+- Modo pixelado (tecla A)
+- Modo color (tecla B)
+- Modo bordes coloreados (tecla K)
+- Modo detector de movimiento (tecla )
+
+### Autores
+@Yaivi    (Javier Sánchez Godoy)
+@AlfreVR  (Alfredo Villarroya Roldós)
