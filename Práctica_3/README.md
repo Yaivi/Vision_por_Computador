@@ -49,7 +49,7 @@ Con todo esto lo que hemos obtenido es un 78% de accuracy, según la matriz de c
 
 ![Matriz de confusión resultante](MatrizConfuAlumnos.png)
 
-Si comparamos la imagen con la clasificación de los microplásticos que nos daba de ejemplo el profesor en el archivo VC_P3, podemos ver los fallos que ha cometido nuestro clasificador.
+Si comparamos la imagen con la clasificación de los microplásticos que nos daba de ejemplo el profesor en el archivo VC_P3, podemos ver los fallos que ha cometido nuestro clasificador. (Izquierda nuestros resultados, derecha clasificación correcta)
 
 <p float="left">
   <img src="CLAS_ALUMNO.png" alt="Nuestro resultado" width="400"/>
