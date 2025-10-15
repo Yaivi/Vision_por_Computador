@@ -51,6 +51,7 @@ Con todo esto lo que hemos obtenido es un 78% de accuracy, según la matriz de c
 
 Si comparamos la imagen con la clasificación de los microplásticos que nos daba de ejemplo el profesor en el archivo VC_P3, podemos ver los fallos que ha cometido nuestro clasificador.
 
-![Nuestro resultado](CLAS_ALUMNO.png)
-![Clasificación del profe](CLAS_PROFE.png)
+![Nuestro resultado](CLAS_ALUMNO.png){width=400}
+![Clasificación del profe](CLAS_PROFE.png){width=400}
+
 
