@@ -19,11 +19,14 @@ Ahora introducimos la detección de contornos y las filtramos las que tengan un 
 
 Añadimos una copia de la imagen original para que el usuario interactue, establecemos un orden de las monedas y las enumeramos.
 ![Monedas enumeradas](image.png)
+
 Al poner una imagen para que el usuario actue necesitamos hacer un evento que lea el clic del usuario. Creamos una función en la cual si lee un clic en una de las monedas aparece una pestaña en la que el usuario indica el tipo de moneda segun la lista inicial: ["2e", "1e", "50c", "20c", "10c", "5c", "2c", "1c"]. Una vez introducimos el valor correcto, se quitan las numeraciones y se escriben los valores de las monedas.
 Es en este momento donde se calcula el valor total de las monedas en la imagen.
+
 ![Monedas con su valor](image-1.png)
 
 Al terminar la ejecución se indica las monedas identificadas por separado.
+
 ![Output](image-2.png)
 
 
