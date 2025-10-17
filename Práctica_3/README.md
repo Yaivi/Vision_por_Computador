@@ -19,11 +19,14 @@ Ahora introducimos la detección de contornos y las filtramos las que tengan un 
 
 Añadimos una copia de la imagen original para que el usuario interactue, establecemos un orden de las monedas y las enumeramos.
 ![Monedas enumeradas](image.png)
+
 Al poner una imagen para que el usuario actue necesitamos hacer un evento que lea el clic del usuario. Creamos una función en la cual si lee un clic en una de las monedas aparece una pestaña en la que el usuario indica el tipo de moneda segun la lista inicial: ["2e", "1e", "50c", "20c", "10c", "5c", "2c", "1c"]. Una vez introducimos el valor correcto, se quitan las numeraciones y se escriben los valores de las monedas.
 Es en este momento donde se calcula el valor total de las monedas en la imagen.
+
 ![Monedas con su valor](image-1.png)
 
 Al terminar la ejecución se indica las monedas identificadas por separado.
+
 ![Output](image-2.png)
 
 
@@ -31,7 +34,9 @@ Al terminar la ejecución se indica las monedas identificadas por separado.
 TAREA: La tarea consiste en extraer características (geométricas y/o visuales) de las tres imágenes completas de partida, y aprender patrones que permitan identificar las partículas en nuevas imágenes. Para ello se proporciona como imagen de test MPs_test.jpg y sus correpondientes anotaciones MPs_test_bbs.csv con la que deben obtener las métricas para su propuesta de clasificación de microplásticos, además de la matriz de confusión. La matriz de confusión permitirá mostrar para cada clase el número de muestras que se clasifican correctamente de dicha clase, y el número de muestras que se clasifican incorrectamente como perteneciente a una de las otras dos clases
 
 ### Respuesta Tarea 2
-Para realizar la clasificación lo primero que hicimos fue, con las imágenes de entrenamiento coger ciertas características de los elementos y realizar las medias de estos, las características que cogimos fueron: área, perímetro, compacidad (), solidez (), Aspect Ratio, y la intensidad de los píxeles es decir el color. Con esto buscábamos informarnos de que características suelen tener en común los elementos de la misma clase y que características podríamos usar para diferenciarlos de las otras clases.
+Para realizar la clasificación lo primero que hicimos fue, con las imágenes de entrenamiento coger ciertas características de los elementos y realizar las medias de estos, las características que cogimos fueron: área, perímetro, compacidad (mide lo irregular que es la forma respecto a un círculo), solidez (relación entre el área del objeto y su envolvente convexa, indica cuán “lleno” es), Aspect Ratio (relación entre ancho y alto, muestra cuán alargado es el objeto), y la intensidad de los píxeles del objeto, es decir el color. Con esto buscábamos informarnos de que características suelen tener en común los elementos de la misma clase y que características podríamos usar para diferenciarlos de las otras clases. Aquí podemos ver las medias que conseguimos de ese análisis.
+
+<pre> ``` Medias FRA -> Área: 3702.50, Compacidad: 4.14, AR: 1.59, Solidez: 0.77, Intensidad: 112.34 PEL -> Área: 4287.85, Compacidad: 1.23, AR: 1.03, Solidez: 0.98, Intensidad: 68.25 TAR -> Área: 2989.44, Compacidad: 1.38, AR: 1.04, Solidez: 0.95, Intensidad: 28.69 ``` </pre>
 
 Para obtener que parte de la imagen observar, usamos el CSV y fuimos fila por fila, revisando las coordenadas que nos daban para realizar un recorte y tratar ese recorte, primero pasandolo a escala de grises, haciendo el threshold co Otsu y luego obtener los contornos. Una vez con los contornos simplemente quedaba realizar los cálculos dentro de estos para sacar las características de la misma forma que hicimos antes. Cada vez que obtenemos estas características añadimos a un dataframe una entrada con los datos para poder acceder a ellos más facilmente cuando vayamos a clasificar los objetos.
 
