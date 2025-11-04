@@ -2,10 +2,10 @@
 #ACTUALIZAR A RUTAS ABSOLUTAS PARA PODER USARLO SIN FALLOS EL ENTRENAMIENTO
 train: C:\Users\javie\Documents\TRABAJO UNI\VC\Vision_por_Computador\Práctica_4\Parte_A\TGC_RBNW\train\images
 val: C:\Users\javie\Documents\TRABAJO UNI\VC\Vision_por_Computador\Práctica_4\Parte_A\TGC_RBNW\val\images
-test: C:\Users\javie\Documents\TRABAJO UNI\VC\Vision_por_Computador\Práctica_4\Parte_A\TGC_RBNW\test_im\images
+test: C:\Users\javie\Documents\TRABAJO UNI\VC\Vision_por_Computador\Práctica_4\Parte_A\TGC_RBNW\test\images
 
 # número de clases
 nc: 1
 
 # nombres de las clases
-names: [ 'matricula']
+names: [ 'plate']
