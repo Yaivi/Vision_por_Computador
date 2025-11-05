@@ -50,8 +50,22 @@ names: [ 'plate']
 ```
 En este archivo se especifican con que propósito se van a usar las diferentes carpetas durante el entrenamiento. Además se añade el número de clases y el nombre de estas para que el modelo asocie lo que aprenda de las imágenes y los labels.
 
-## Predicción usando vídeo de ejemplo
+## Detección usando vídeo de ejemplo
+Para la detección de las matrículas se cargan 2 modelos, el modelo de YOLO yolo11n.pt que es el capaz de detectar personas y vehículos como se especifíca en la lista de clases, y en cuanto se detecte un coche se hará un recorte de este y se aplicará el modelo que se ha entrenado para intentar detectar la matrícula. Tras cargar ambos modelos se hace lo mismo con el vídeo de ejemplo, y se guarda la dirección del vídeo resultante junto con los parámetros que tendrá el vídeo de salida. También se preparan las columnas que trendrá el archivo csv cuando se vaya a crear. 
 
+Con esto ya hecho se comienza con la detección frame por frame del vídeo, pasándole el modelo yolo11n.pt para detectar las personas y coches, en caso de que en el frame se detecte algo de esto se procede a crear un rectángulo con cv2 para marcarlo, azul para coches y verde para personas, poniendo también el grado de confianza que se tiene con esta detección y la clase que se ha predicho. En caso de detectar el coche se hace el recorte antes mencionado, se comprueba que el recorte sea válido y se le pasa el modelo que se ha entrenado con el dataset de matrículas. Del resultado de la predicción del segundo modelo también se obtienen la confianza de detección y las coordenadas del bounding box, con esto creamos un rectángulo amarillo sobre el que escribimos la confianza de la detección y la clase que ha detectado.
 
+Por cada frame se crea una línea del csv que contiene:
+```
+fotograma, tipo_objeto, confianza, identificador_tracking, x1, y1, x2, y2, matrícula_en_su_caso, confianza, mx1,my1,mx2,my2, texto_matricula
+```
 
 # Parte_B
+
+## Tesseract
+
+## EasyOCR
+
+## PaddleOCR
+
+## VLM
