@@ -63,8 +63,49 @@ fotograma, tipo_objeto, confianza, identificador_tracking, x1, y1, x2, y2, matr�
 # Parte_B
 
 ## Tesseract
+Para el uso de Tesseract, primero hay que instalar los binarios desde el repositorio de la Universidad Manheim. También tenemos que descargar su wrapper mediante pip.
 
+Una vez descargado, indicamos su ruta ya que no la definimos en la instalación. Cargamos nuestro modelo de matrículas y el modelo de yolo11. Asignamos unos carácteres permitidos y las clases que queremos del modelo de yolo11.
+
+Pasamos a cargar el video y la salida del video procesado. Aprovechamos también para indicarle el csv, que va a tener los siguientes campos:
+
+![alt text](image.png)
+
+Empezamos a ver frame a frame el video, donde primero miramos para *trackear* en ambos modelos. Ahora pasamos a ver los resultados del modelo de yolo11 y si los ahi si son de la clase persona o coche les damos un identificador con su nombre de clase y su color, aprovechamos para tambien escribirlo en el csv. Hacemos lo mismo pero con las matriculas.
+
+Con la matricula identificada se la recortamos y la pasamos a escala de grises donde configuramos el tesseract para que nos de solo la matrícula.
+
+![alt text](image-1.png)
+
+Después de esto ponemos en el video algo similar que con el modelo de yolo11 y le ponemos lo que ha leido entre corchetes.
+
+También aprovechamos a calcular el tiempo que tarda en procesar el video entero. Guardamos el video y el csv.
 ## EasyOCR
+
+En cuanto al easyOCR contiene la misma manera de leer las variables y analizar el video que tesseract, cambiando cuando pasamos las matriculas al OCR. En este caso no hace falta hacer una configuración, solo decirlo que "detail=0" y "paragraph=false".
+
+![alt text](image-7.png)
+
+## Comparativa Tesseract y EasyOCR
+
+Esta es es tiempo de ejecución de tesseract:
+
+![alt text](image-2.png)
+
+Este es el tiempo de ejecución de EasyOCR:
+
+![alt text](image-3.png)
+
+Si los ponemos para visualizar de forma gráfica podemos ver que easyOCR tarda menos y con un mayor fps promedio. Si vemos tambien los resultados vemos que no acerto por completo ninguna a diferencia de tesseract que pudo acertar alguna. Por lo que con estos resultados el tesseract sería mejor si queremos seguir utilizando este modelo.
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+Una comparativa de resultados con 6 de las matriculas que se detectan con el modelo entrenado.
+
+![alt text](image-4.png)
+
 
 ## PaddleOCR
 
