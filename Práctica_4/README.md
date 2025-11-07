@@ -80,11 +80,17 @@ Con la matricula identificada se la recortamos y la pasamos a escala de grises d
 Después de esto ponemos en el video algo similar que con el modelo de yolo11 y le ponemos lo que ha leido entre corchetes.
 
 También aprovechamos a calcular el tiempo que tarda en procesar el video entero. Guardamos el video y el csv.
+
+[Link](https://drive.google.com/file/d/1wF87VPlLHaZJusweBrdMav2GrlDXRfHy/view) al video.
+
 ## EasyOCR
 
 En cuanto al easyOCR contiene la misma manera de leer las variables y analizar el video que tesseract, cambiando cuando pasamos las matriculas al OCR. En este caso no hace falta hacer una configuración, solo decirlo que "detail=0" y "paragraph=false".
 
 ![alt text](image-7.png)
+
+[Link](https://drive.google.com/file/d/1-8L2SVbBQU8_C_VBSXpgAZKrIefh5z56/view) al video.
+
 
 ## Comparativa Tesseract y EasyOCR
 
