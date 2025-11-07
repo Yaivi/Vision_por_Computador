@@ -63,7 +63,17 @@ En el archivo final, se han hecho detecciones con 2 vídeos diferentes, si se re
 
 El primer código, como se explicó antes, detecta un coche, luego pasa el recorte del coche al modelo de las matrículas para detectarla y tras las detecciones se dibujan las cajas y se escriben las clases y el ID del objeto. Cuando esto se realiza con pocos coches no presenta mayor problema, pero en el segundo vídeo aparecen una gran cantidad de coches, y las cajas de detección de los coches que se encuentran detrás de otro coinciden con la caja del coche que se encuentra delante. 
 
-Si se realizaba la escritura de la ID y la caja del coche de delante cabía la posibilidad de que cuando se detectase el coche que estaba detrás y se pasase el recorte de este, las letras de la clase y los números de ID se encontrasen dentro del recorte y al pasarlo al modelo de las matrículas este asumiese que esas letras y números eran una matrícula. Para solucionar esto, se rehizo el código y esta vez se detecta todo primero, sin dibujar nada en el video, y una vez se tenga todo el contenido en el csv se comienza a realizar la 
+Si se realizaba la escritura de la ID y la caja del coche de delante cabía la posibilidad de que cuando se detectase el coche que estaba detrás y se pasase el recorte de este, las letras de la clase y los números de ID se encontrasen dentro del recorte y al pasarlo al modelo de las matrículas este asumiese que esas letras y números eran una matrícula.
+
+Para solucionar esto, se rehizo el código y esta vez se detecta todo primero, sin dibujar nada en el video, guardando las detecciones en el csv, y una vez se tenga todo el contenido en el csv se comienza a realizar frame por frame, a través de los datos guardados en las filas del csv, los dibujos de las cajas, IDs y nombres de la clases para devolver el vídeo con las detecciones realizadas marcadas.
+
+Enlace vídeo con detección 1: https://drive.google.com/file/d/107lG1AuTHrROH-2lZs_kSJ0aOoq-rkZP/view?usp=sharing
+
+Enlace vídeo con detección 2: https://drive.google.com/file/d/1AeGOB7w6UvyG5k8HDWL3KX89-ABKR0Hv/view?usp=drive_link
+
+Tras las detecciones de los vídeos, se realiza un análisis del csv para ver cuantas IDs únicas de coche y persona se han detectado, que nos puede llevar a un aproximado del número real de elementos de cada tipo que aparecen en el vídeo.
+
+![Recorte detección del segundo vídeo](ejemplo_VC4.PNG)
 
 # Parte_B
 
@@ -116,9 +126,4 @@ Si los ponemos para visualizar de forma gráfica podemos ver que easyOCR tarda m
 Una comparativa de resultados con 6 de las matriculas que se detectan con el modelo entrenado.
 
 ![alt text](image-4.png)
-
-
-## PaddleOCR
-
-## VLM
 
