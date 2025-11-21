@@ -1,6 +1,10 @@
 # Filtro entrenado con set de emociones
 Se ha escogido un dataset de expresiones faciales en Kaggle, el FER-2013, que contiene expresiones faciales de 7 emociones diferentes, disgusto, miedo, enfado, alegría, tristeza, sorpresa y neutral. En total posee 28000 imagenes ya dividas en carpetas de train y test.
 
+**Enlace al dataset:** https://www.kaggle.com/datasets/msambare/fer2013
+
+Debido a la extrema similitud entre las expresiones de miedo y sorpresa, hemos decidio eliminar la categoría de sorpresa, y también se ha eliminado la etiqueta de disgusto, al tener muy pocas imágenes con las que contribuir al entrenamiento. Estas decisiones se han tomado con el objetivo de hacer más robusto y preciso al modelo.
+
 ## Carga de datos
 Para cargar las imágenes del dataset se usado de base el código proporcionado por el prosefor, convertido a una función para poder usarlo con las carpetas de imágenes que ya vienen con el dataset. Además dentro de la función se le realiza un resize a las imágenes para ponerlas en formato 64x64. Con todo esto se consigue cargar en variables las imágenes, las etiquetas de cada una de las imágenes, todas las etiquetas que tiene el dataset y el número de etiquetas distintas que hay. También se mantiene del código original la muestra de la primera imagen de cada etiqueta que se cargue.
 
@@ -20,6 +24,9 @@ Una vez completada la búsqueda, se entrena el modelo SVM con la mejor combinaci
 Una vez entrenado el sistema completo, se procede a evaluar su rendimiento sobre el conjunto de test. Para ello se carga el modelo previamente guardado en un único archivo mediante joblib, que contiene el PCA, el escalador y el clasificador SVM entrenado. Esto permite reproducir exactamente el mismo pipeline aplicado durante el entrenamiento sin necesidad de volver a recalcular ningún componente.
 
 ## Aplicación del modelo para detección en tiempo real y uso de filtros
+El código detecta la cara en tiempo real, predice la emoción usando un modelo SVM, y coloca un filtro gráfico en diferentes zonas de la cara según la emoción, ajustando tamaño, posición y orientación automáticamente.
+
+![Gif de uso del modelo entrenado, transicionando entre emociones](https://github.com/Yaivi/Vision_por_Computador/blob/main/Pr%C3%A1ctica_5/Emociones.gif?raw=true)
 
 
 # Filtro libre elección
