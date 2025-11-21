@@ -48,3 +48,9 @@ Ahora continuamos al bucle donde miramos si se sigue capturando los frames para 
 
 En cuanto a los labios, seleccionamos tanto el labio superior y el inferior como la frente y la barbilla, para saber la altura de la cabeza. Cuando la distancia entre los labios sea mayor que el mínimo indicado empezamos con la animación, luego redimensionamos y rotamos dependiendo del ángulo de la cabeza calculada previamente. Después superponemos con la función que definimos al principio.
 
+Dejamos una preview de nuestro filtro de mago:
+
+
+![Gif de uso del modelo libre, el mago](https://github.com/Yaivi/Vision_por_Computador/blob/main/Pr%C3%A1ctica_5/FiltroMago.gif?raw=true)
+
+
